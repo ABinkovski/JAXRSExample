@@ -1,8 +1,6 @@
 package com.edu.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDateTime;
@@ -12,6 +10,8 @@ import static lombok.AccessLevel.PRIVATE;
 
 @XmlRootElement(name = "LocalTime")
 @Getter
+@Setter
+@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor(access = PRIVATE)
 public class LocalTimeDto {
