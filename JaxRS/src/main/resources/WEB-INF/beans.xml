@@ -7,7 +7,7 @@
 
     <jaxrs:server id="helloRootService" address="/hi">
         <jaxrs:serviceBeans>
-            <bean id="helloService" class="com.edu.services.HelloService"/>
+            <ref bean="helloService"/>
         </jaxrs:serviceBeans>
 
         <jaxrs:providers>
@@ -15,4 +15,6 @@
             <bean class="com.fasterxml.jackson.jaxrs.json.JacksonXMLProvider"/>
         </jaxrs:providers>
     </jaxrs:server>
+
+    <bean id="helloService" class="com.edu.services.HelloService"/>
 </beans>
