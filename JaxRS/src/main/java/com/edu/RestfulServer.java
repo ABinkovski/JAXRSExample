@@ -6,16 +6,16 @@ import org.apache.cxf.jaxrs.JAXRSServerFactoryBean;
 import org.apache.cxf.jaxrs.lifecycle.SingletonResourceProvider;
 
 public class RestfulServer {
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         final JAXRSServerFactoryBean factoryBean = new JAXRSServerFactoryBean();
         factoryBean.setResourceClasses(HelloService.class);
 
         factoryBean.setResourceProvider(new SingletonResourceProvider(new HelloService()));
 
-        factoryBean.setAddress("http://localhost:8080/");
+        factoryBean.setAddress("http://localhost:8090/"); // should be 8080
 
         final Server server = factoryBean.create();
-
+//        server.getEndpoint()
 
     }
 }
