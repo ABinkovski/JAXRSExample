@@ -13,6 +13,7 @@
     <groupId>com.edu</groupId>
     <artifactId>JaxRS</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <properties>
 
@@ -25,27 +26,27 @@
         <!--            <artifactId>cxf-rt-frontend-jaxrs</artifactId>-->
         <!--            <version>3.1.7</version>-->
         <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework</groupId>-->
-        <!--            <artifactId>spring-context</artifactId>-->
-        <!--            <version>5.3.20</version>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework</groupId>-->
-        <!--            <artifactId>spring-web</artifactId>-->
-        <!--            <version>5.3.20</version>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>javax.servlet</groupId>-->
-        <!--            <artifactId>servlet-api</artifactId>-->
-        <!--            <version>2.5</version>-->
-        <!--            <scope>provided</scope>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.fasterxml.jackson.jaxrs</groupId>-->
-        <!--            <artifactId>jackson-jaxrs-json-provider</artifactId>-->
-        <!--            <version>2.13.2</version>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.3.20</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>5.3.20</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.jaxrs</groupId>
+            <artifactId>jackson-jaxrs-json-provider</artifactId>
+            <version>2.13.2</version>
+        </dependency>
 
         <!--        https://www.baeldung.com/apache-cxf-rest-api-->
         <dependency>
@@ -63,6 +64,52 @@
             <artifactId>httpclient</artifactId>
             <version>4.5.2</version>
         </dependency>
+
+        <!--        https://stackoverflow.com/questions/6312030/cxf-no-message-body-writer-found-for-class-automatically-mapping-non-simple-r-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-rs-extension-providers</artifactId>
+            <version>3.0.2</version>
+        </dependency>
+
+        <!--        <dependency>-->
+        <!--            <groupId>org.codehaus.jackson</groupId>-->
+        <!--            <artifactId>jackson-jaxrs</artifactId>-->
+        <!--            <version>1.9.0</version>-->
+        <!--        </dependency>-->
     </dependencies>
 
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.4.0</version>
+                <configuration>
+                    <webResources>
+                        <resource>
+                            <directory>src/main/resources</directory>
+                        </resource>
+                    </webResources>
+                    <warName>jaxrswar</warName>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.2.11.v20150529</version>
+                <configuration>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <webApp>
+                        <contextPath>/hi</contextPath>
+                    </webApp>
+                    <httpConnector>
+                        <port>8080</port>
+                    </httpConnector>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
