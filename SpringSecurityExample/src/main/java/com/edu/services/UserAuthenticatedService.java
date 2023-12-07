@@ -16,7 +16,7 @@ import java.util.Map;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
-public class UserAuthentificatedService {
+public class UserAuthenticatedService {
 
     @GetMapping(value = "/", produces = APPLICATION_JSON_VALUE)
     @PreAuthorize("hasRole('ROLE_USER_ROLE')")
