@@ -12,6 +12,7 @@
         <module>SpringBootJaxRS</module>
         <module>SpringBootExample</module>
         <module>SpringSecurityExample</module>
+        <module>SpringBootHandlingExceptions</module>
     </modules>
 
     <properties>
