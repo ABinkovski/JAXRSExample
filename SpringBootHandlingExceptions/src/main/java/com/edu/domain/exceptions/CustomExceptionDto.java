@@ -8,8 +8,8 @@ import lombok.RequiredArgsConstructor;
 @Builder
 @RequiredArgsConstructor
 public class CustomExceptionDto {
-    private final Throwable cause;
     private final String message;
     private final boolean recoverable;
+    private final Throwable cause;
 
 }

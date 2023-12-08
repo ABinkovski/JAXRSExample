@@ -13,4 +13,5 @@ public class Main {
 
 /**
  * test url: http://localhost:8080/api/ex
+ * test url: http://localhost:8080/api/ex2
  */
