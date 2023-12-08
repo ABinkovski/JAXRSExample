@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class RootApiService {
 
-    @GetMapping("/ex")
+    @GetMapping("/ex1")
     public String itShouldFail() {
         throw new CustomException("this is test exception");
     }
@@ -23,7 +23,6 @@ public class RootApiService {
     }
 
     @GetMapping("/ex3")
-//    @ExceptionHandler(CustomExceptionV3.class)
     public String itShouldFailV3() {
         throw new CustomExceptionV3("this is test exception V3");
     }
