@@ -64,7 +64,7 @@
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
+            <artifactId>logback-classic</artifactId>
             <version>${logback.version}</version>
         </dependency>
     </dependencies>
@@ -98,6 +98,18 @@
                         <contextPath>/springcore</contextPath>
                     </webApp>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>ch.qos.logback</groupId>
+                        <artifactId>logback-classic</artifactId>
+                        <version>${logback.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-api</artifactId>
+                        <version>${slf4j.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
