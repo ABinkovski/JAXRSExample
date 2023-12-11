@@ -9,7 +9,6 @@ public class SpringWebInitializer extends AbstractAnnotationConfigDispatcherServ
     protected Class<?>[] getRootConfigClasses() {
         log.info("getRootConfigClasses");
         return new Class[]{
-                MappingConfig.class
         };
     }
 
