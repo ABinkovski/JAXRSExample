@@ -7,6 +7,8 @@ or
 * Jetty Server:</br>
 ``mvn jetty:run`` or ``mvn jetty:run-war``
 
-Test endpoint:
-<a href="http://localhost:8080/springcore/">text root endpoint</a>
+Test endpoints:
+
+* <a href="http://localhost:8080/springcore/">text root endpoint</a>
+* <a href="http://localhost:8080/springcore/json">text json endpoint</a>
 
