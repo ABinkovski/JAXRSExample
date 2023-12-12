@@ -1,5 +1,6 @@
 package com.edu.services;
 
+import com.edu.domain.model.exceptions.TestException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -27,5 +28,10 @@ public class RootController {
         responseMap.put("serverTime", LocalDateTime.now());
 
         return ResponseEntity.ok(responseMap);
+    }
+
+    @GetMapping("/exception")
+    public ResponseEntity<Object> throwAnyTestException() {
+        throw new TestException("this is simple test exception");
     }
 }
