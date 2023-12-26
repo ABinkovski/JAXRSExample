@@ -14,6 +14,7 @@
         <module>SpringSecurityExample</module>
         <module>SpringBootHandlingExceptions</module>
         <module>SpringCoreExample</module>
+        <module>SpringValidationExample</module>
     </modules>
 
     <properties>
