@@ -15,6 +15,7 @@
         <module>SpringBootHandlingExceptions</module>
         <module>SpringCoreExample</module>
         <module>SpringValidationExample</module>
+        <module>SpringBootExceptionHandlingConvergence</module>
     </modules>
 
     <properties>
